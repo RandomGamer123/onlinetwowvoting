@@ -1,0 +1,112 @@
+Terms and Conditions ("Terms")
+
+
+
+Please read these Terms and Conditions ("Terms", "Terms and Conditions")
+ carefully before using our website at https://random314.000webhostapp.com , which provides Online TWOW Voting functions, or using our mobile application, or using functions or commands that are linked with these applications with messagelogbot (Commands that begin with msglogbot:onlinevote), all these three functions are to be referred to as "Services" or "Our services" from hereafter.
+The operator of these services, may hereafter be referred to as "us", "we", or "our".
+
+
+These Terms of Service (“Terms”), which include and hereby incorporate the Privacy Policy at https://random314.000webhostapp.com/gdprprivacypolicy.txt (“Privacy Policy”), are a legal agreement between you and us.
+
+Your access to and use of the Service is conditioned on your acceptance of and
+ compliance with these Terms.
+
+These Terms apply to all visitors, users and 
+others who access or use the Services. 
+
+By accessing or using the Services you agree to be bound by these Terms.
+If you 
+disagree with any part of the terms then you may not access or use the Services, and we may take other actions on related Discord servers.
+
+
+By using our services, you agree that you are above 13, or if you are in the EEA, you are above the age of consent in your country related to privacy laws.
+
+Any data, text, graphics, photographs and their selection and arrangement, and any other materials uploaded to the Service by you is “Your Content.”
+ You represent and warrant that Your Content is original to you and that you exclusively own the rights to such content, including the right to grant all of the rights and licenses in these Terms without us incurring any third party obligations or liability arising out of its exercise of such rights and licenses. 
+All of Your Content is your sole responsibility and we are not responsible for any material that you upload, post, submit, or otherwise make available. By uploading, distributing, transmitting, submitting or otherwise using Your Content with the Service, you grant to us a perpetual, nonexclusive, transferable, royalty-free, sublicensable, and worldwide license to use, host, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, perform, and display Your Content for any reason.
+We do not guarantee the accuracy, quality, or integrity of any user content posted.
+
+
+By using the Service, you acknowledge and accept that you may be exposed to material you find offensive or objectionable. You agree that we will not under any circumstances be liable for any user content, including, but not limited to, errors in any user content, or any loss or damage incurred by use of user content. We reserve the right to remove and permanently delete Your Content from the Service with or without notice for any reason or no reason.
+
+RULES OF USE
+The Services allow you to submit, post, share or otherwise make public Your Content. The methods in which you submit, post, share or otherwise make public your content will be referred to as "The Methods", or "These methods".
+We have no obligation to monitor These Methods but we may do so in connection with providing the Services. We may also terminate or suspend your access to any one or more of The Methods at any time, without notice, for any reason. 
+You acknowledge that any user content (including without limitation chats, submissions, votes, postings, or materials posted, or otherwise made public by users) on The Methods is neither endorsed nor controlled by us. We will not under any circumstances be liable for any activity within The Methods. 
+We are not responsible for information that you choose to share on The Methods, or for the actions of other users. As a condition of your use of the Services, and without limiting your other obligations under these Terms, you agree to comply with the restrictions and rules of use set forth in these Terms as well as any additional restrictions or rules (such as application-specific rules) set forth in the Services. 
+As an example, you agree not to use any one of The Services in order to:
+Post, submit, vote, upload, transmit or otherwise disseminate or make public information that is objectionable or that may cause people to feel uncomfortable or disrespected, with "objectionable", "uncomfortable", and "disrespected" determined on a case-by-case basis, and are at the sole discretion of us.
+Defame, libel, ridicule, mock, stalk, threaten, harass, intimidate or abuse anyone;
+Engage in conduct that is fraudulent or illegal or otherwise harmful to us or any other user;
+Upload, submit or transmit (or attempt to upload, submit or transmit) files that contain viruses, Trojan horses, worms, time bombs, cancelbots, corrupted files or data, or any other similar software or programs or engage in any other activity that may damage the operation of the Services or other users' computers, or cause damage to the operation of the Services or other users' computers;
+Violate the contractual, personal, intellectual property or other rights of any party including using, uploading, transmitting, distributing, or otherwise making available any information made available through the Services in any manner that infringes any copyright, trademark, patent, trade secret, or other right of any party (including rights of privacy or publicity);
+Attempt to obtain or obtain passwords or other private information from other users, or us;
+Develop, distribute, or publicly inform other members of "auto" software programs, "macro" software programs or other "cheat utility" software program or applications in violation of the applicable license agreements; or
+Exploit, distribute or publicly inform other members of any game error, miscue or bug which gives an unintended advantage; violate any applicable laws or regulations; or promote or encourage illegal activity including, but not limited to, hacking, cracking or distribution of counterfeit software, compromised accounts, or cheats or hacks for the Service.
+These rules of use are not meant to be exhaustive, and we reserve the right to determine what conduct we consider to be a violation of the Terms, or improper use of the Services and to take action including prohibiting the linking of your account and blacklisting your account and exclusion from further participation in the Services.
+
+Our Services may contain links to third-party web sites or services that are not owned or controlled by us. We have no control over, and assume no responsibility for, the
+ content, privacy policies, or practices of any third party web sites, 
+services or servers. You further acknowledge and agree that we shall not 
+be responsible or liable, directly or indirectly, for any damage or loss
+ caused or alleged to be caused by or in connection with use of or reliance on
+any such content, goods or services available on or through any such web sites
+or services.
+
+We strongly advise you to read the terms and conditions, rules and privacy policies 
+of any third-party web sites, services or servers that you visit.
+
+
+
+
+THE SERVICES AND THE SERVICE MATERIALS ARE PROVIDED "AS IS" AND “AS AVAILABLE” WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. 
+YOUR USE OF THE SERVICES IS AT YOUR SOLE RISK. IN ADDITION, WHILE WE ATTEMPT TO PROVIDE A GOOD USER EXPERIENCE, WE CANNOT AND DO NOT REPRESENT OR WARRANT THAT THE SERVICES WILL ALWAYS BE SECURE OR ERROR-FREE OR THAT THE SERVICES WILL ALWAYS FUNCTION WITHOUT DELAYS, DISRUPTIONS, OR IMPERFECTIONS. THE FOREGOING DISCLAIMERS SHALL APPLY TO THE EXTENT PERMITTED BY APPLICABLE LAW.
+
+LIMITATION OF LIABILITY
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL WE BE LIABLE TO YOU OR TO ANY THIRD PERSON FOR ANY CONSEQUENTIAL, INCIDENTAL, SPECIAL, PUNITIVE OR OTHER INDIRECT DAMAGES, INCLUDING ANY LOST PROFITS OR LOST DATA, ARISING FROM YOUR USE OF THE SERVICE OR OTHER MATERIALS ON, ACCESSED THROUGH OR DOWNLOADED FROM THE SERVICE, WHETHER BASED ON WARRANTY, CONTRACT, TORT, OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT WE HAVE BEEN ADVISED OF THE POSSIBILITY OF THESE DAMAGES.WE SHALL NOT BE LIABLE TO YOU FOR ANY AMOUNT OF MONEY, CASH OR GOODS. 
+THE LIMITATIONS AND DISCLAIMERS IN THESE TERMS DO NOT PURPORT TO LIMIT LIABILITY OR ALTER RIGHTS THAT CANNOT BE EXCLUDED UNDER APPLICABLE LAW. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES OR LIMITATION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES, WHICH MEANS THAT SOME OF THE ABOVE DISCLAIMERS AND LIMITATIONS MAY NOT APPLY TO YOU. IN THESE JURISDICTIONS, OUR LIABILITY WILL BE LIMITED TO THE GREATEST EXTENT PERMITTED BY LAW.
+
+You specifically acknowledge that we shall not be liable for user content, including without limitation Your Content, or the defamatory, offensive, or illegal conduct of any third party and that the risk of harm or damage from the foregoing rests entirely with you.
+
+INDEMNIFICATION
+You agree to indemnify and hold us, harmless from and against any loss, liability, claim, demand, damages, costs and expenses, including reasonable attorney's fees, arising out of or in connection with your use of and access to the Service, your violation of any term of these Terms, your violation of any third party right, including without limitation any copyright, property, or privacy right or any third party agreement; or any of Your Content or information in your linked Account or any other information you post, submit or share on or through the Services. As used in this section, "you" shall include anyone accessing the Service using your linked account.
+
+We also reserve the right to modify or discontinue, temporarily or permanently, the Services (or any part thereof) with or without notice.
+We may terminate or suspend access to our Services immediately, and/or take other actions on related Discord servers without prior 
+notice or liability, for any reason whatsoever, including without limitation 
+if you breach the Terms.
+
+
+All provisions of the Terms which by their nature should survive termination
+ shall survive termination, including, without limitation, ownership 
+provisions, warranty disclaimers, indemnity and limitations of liability.
+
+These Terms shall be governed and construed in accordance with the laws of New 
+York, United States, without regard to its conflict of law provisions.
+
+
+Our failure to enforce any right or provision of these Terms will not be
+considered a waiver of those rights. 
+If any provision of these Terms is held
+ to be invalid or unenforceable by a court, the remaining provisions of these 
+Terms will remain in effect. 
+These Terms complement and do not replace any prior
+ agreements we might have between us regarding the Services, in the case of the conflict, these Terms shall supercede.
+
+
+
+
+
+These terms were last modified on 12 August 2019. All times and dates are based on Universal Coordinated Time (UTC).
+We reserve the right, at our sole discretion, to modify or replace these Terms 
+at any time. If a revision is material we will try to provide at least 7 days 
+notice prior to any new terms taking effect. What constitutes a material
+ change will be determined at our sole discretion. 
+
+
+By continuing to access or use our Service after those revisions become
+ effective, you agree to be bound by the revised terms. If you do not agree to 
+the new terms, the only recourse is to stop using the Services.
+
+If you have any questions about these Terms, please contact us at Discord using RandomGamer123#5222 (Discord ID: 156390113654341632)

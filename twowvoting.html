@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Online TWOW Voting</title>
+</head>
+<body>
+<h2>Welcome! Please note cookies must be enabled for the login to work correctly.</h2>
+<script> 
+if (!(navigator.cookieEnabled)) {
+	alert("You need to turn on cookies to make this work.");
+}
+</script>
+<form action="/loginvalidate.php" method="post">
+	<input type="checkbox" name="terms" value="agree" required> I agree to the <a href = "https://random314.000webhostapp.com/gdprprivacypolicy.txt"> Privacy Policy</a> and our <a href = "https://random314.000webhostapp.com/termsandconditions.txt">Terms and Conditions</a> .<br>
+	<input type="radio" name="mode" value=1 required> Keep me logged in after this session. (Choose either one if you have already logged in previously.)<br>
+	<input type="radio" name="mode" value=2 required> Do not keep me logged in after this session. (Choose either one if you have already logged in previously.)<br>
+	<input type="submit" value="Submit">
+</form>
+<footer>By using this site, you agree to our <a href = "https://random314.000webhostapp.com/gdprprivacypolicy.txt"> Privacy Policy</a> and our <a href = "https://random314.000webhostapp.com/termsandconditions.txt">Terms and Conditions</a>. Your IP Address is not tracked on this particular page. No cookies are placed by this particular page.</footer>
+</html>

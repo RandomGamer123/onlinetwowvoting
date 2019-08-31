@@ -1,0 +1,63 @@
+.topnav {
+	background-color: #333333;
+	color: #333333;
+	overflow: auto;
+	width: 100%;
+	height: auto;
+}
+.clr{
+	clear:both;
+}	
+.topnav a {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a.left{
+	float: left;
+}
+.topnav a.right {
+	float: right;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav a.activel {
+  background-color: #4CAF50;
+  color: white;
+  float: left;
+}
+.topnav a.activer {
+  background-color: #4CAF50;
+  color: white;
+  float: right;
+}
+b.horizontalnavr {
+	color: #f2f2f2;
+	float: right;
+	display: block;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+.functiontable {
+	width: 100%;
+	background-color:#add8e6;
+	border-collapse: collapse;
+	border: 4px solid blue;
+}
+.functd {
+	border: 4px solid blue;
+	color: blue;
+	background-color: #9BB5BD;
+}
+.func {
+	color: blue;
+}
+.function {
+	color: blue;
+	border: 4px solid blue;
+}

@@ -1,0 +1,137 @@
+﻿This site (https://random314.000webhostapp.com), mobile application, or bot (messagelogbot) which hereafter may be referred as "us", "we", "our company", or "our organization", or other similar terms, is a tool to help voting in TWOWs, and/or a tool to log messages and other information to prevent malicious incidents. This privacy policy will explain how our organization uses the personal data we collect from you when you use our website, mobile application, or messagelogbot.
+
+000webhost (https://www.000webhost.com) hosts our website, database, and files for our website, which hereafter may be referred as "hosting sites", "website host", or "site host", or other similar terms, may collect more information from you in the process. Please read their privacy policy for more information.
+Heroku (https://www.heroku.com/) hosts our bot (messagelogbot), which hereafter may be referred as "hosting sites", "bot host", or other similar terms, may collect more information from you in the process. Please read their privacy policy for more information.
+Discord (https://www.discordapp.com/) is where our message logs are located, and where the bot is used, Discord may collect more information for their use, you should view their privacy policy for more information.
+
+Topics:
+
+What data do we collect?
+How do we collect your data?
+How will we use your data?
+Transfer of your data to other jurisdictions:
+How do we store your data?
+What are your data protection rights?
+What are cookies?
+How do we use cookies?
+What types of cookies do we use?
+How to manage your cookies
+Collection of Data from Minors:
+Privacy policies of other websites
+Do Not Track (DNT) Signals:
+Changes to our privacy policy
+How to contact us
+How to contact the appropriate authorities
+
+What data do we collect?
+Our Company collects the following data:
+
+Personal identification information: 
+Your IP Address, the time you browse our site, your Discord account linked with this site, and your Discord ID, username, or bot identifying name that you share with us, and the votes or responses you submit through the site. 
+Messagelogbot also stores messages that you edit or delete, or messages that have received a ⭐ emoji reaction, the times that you sent or edited these messages, and the times when your presence changes, but these are stored in Discord logging channels.
+
+How do we collect your data?
+You directly provide Our Company with most of the data we collect. We collect data and process data when you:
+Link your Discord account with our site.
+Browse our site.
+Post, edit, or delete messages on servers where the messagelogbot is on.
+Use or view our website via your browser’s cookies.
+
+Third-party sites, notably Discord, and sites that we use to host our site or messagelogbot, may receive additional data, check their privacy policies for more information.
+
+Our Company may also receive your data indirectly from the following sources:
+
+You logging on, or off, or changing your presence on Discord, when your account shares at least one server with messagelogbot.
+
+How will we use your data?
+We collect, handle, process, and use your data on the ground that it furthers our legitimate interests in ways that are not overridden by the interests or fundamental rights and freedoms of the affected individuals, such legitimate interests include:
+
+Process your vote or response submission.
+Recongize you and keep you able to use our site through session tokens.
+Keep you linked to our site without having to relink.
+Check for fraud, hacking, or people accessing or linking your account when they shouldn't be.
+Check for alternate accounts.
+Recommend messages to be pinned on Discord when a message has 3 or more ⭐ emojis reacted.
+
+We will share your data to other people, users or companies, or government authorities, we may also make public your data, or the processed results of your data, except for your ip address and access token, which will be anonymised.
+
+Your data may also be collected by 000webhost, which hosts our website, or Heroku, which hosts messagelogbot.
+Discord (https://www.discordapp.com/) is where our message logs are located, and where the bot is used, Discord may collect more information for their use, you should view their privacy policy for more information.
+The people who will receive your data include hosts of relevant TWOWs that have used this service, who can receive your votes, responses, and may receive the website access logs.
+Moderators, or people who have access to the logging channel of relevant servers that have used this service, can access all the data collected by messagelogbot.
+Your data may also be made public in order to fulfill our legitimate interests as stated above, such as to make your vote, response, or other data that you submit, post or otherwise upload to our website function properly, or to alert the public of possible cheating, fraud, or unintended behavior.
+For legal requirements, we may disclose your information if required to do so by law or in the good faith belief that such action is necessary to comply with a legal obligation, protect and defend the rights or property of the Company or Related Companies, protect the personal safety of users of the Services or the public, or protect against legal liability.
+
+Transfer of your data to other jurisdictions:
+Due to the nature of the Internet and this service, and the amount of people that may have access to your data, your data may be transferred to any jurisdiction, uploaded on external servers, or stored on external devices. No matter where you are located, you consent to the processing and transferring of your data in and to other countries or jurisdictions. The laws of other countries or jurisdictions governing data collection and use may not be as comprehensive or protective as the laws of the country or jurisdiction where you live.
+
+How do we store your data?
+Our Company securely stores your data on Discord logging channels, in a database hosted by 000webhost, or in a log file, stored on 000webhost's servers.
+We take reasonable steps to protect the information provided via the Services from loss, misuse, and unauthorized access, disclosure, alteration, or destruction. However, no Internet or email transmission is ever fully secure or error free.
+
+Our Company may keep all your data for an indefinite amount of time. You may request that your data be deleted by contacting RandomGamer123#5222 with Discord ID 156390113654341632 on Discord.
+
+What are your data protection rights?
+Our Company would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:
+
+The right to access – You have the right to request Our Company for copies of your personal data. We may charge you a small fee for this service.
+
+The right to rectification – You have the right to request that Our Company correct any information you believe is inaccurate. You also have the right to request Our Company to complete the information you believe is incomplete.
+
+The right to erasure – You have the right to request that Our Company erase your personal data, under certain conditions.
+
+The right to restrict processing – You have the right to request that Our Company restrict the processing of your personal data, under certain conditions.
+
+The right to object to processing – You have the right to object to Our Company’s processing of your personal data, under certain conditions.
+
+The right to data portability – You have the right to request that Our Company transfer the data that we have collected to another organization, or directly to you, under certain conditions.
+
+If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact me on Discord at RandomGamer123#5222 with Discord ID 156390113654341632. We, server owners or TWOW hosts that use this service, may prevent you from using this service, ban or kick you from relevant servers.
+
+Cookies
+Cookies are text files placed on your computer to collect standard Internet log information and visitor behavior information. When you visit our websites, we may collect information from you automatically through cookies or similar technology
+
+For further information, visit allaboutcookies.org.
+
+How do we use cookies?
+Our Company uses cookies in a range of ways to improve your experience on our website, including:
+
+Keeping you linked to your Discord account
+Allowing our service to recongnize you through session tokens.
+
+Our website host (000webhost) may place other cookies on your site for other purposes, check their privacy policy for more information.
+
+What types of cookies do we use?
+There are a number of different types of cookies, however, our website uses:
+
+Functionality – Our Company uses these cookies so that we recognize you on our website and remember your previously linked account.
+
+Our website host (000webhost) may place other cookies on your site for other purposes, check their privacy policy for more information.
+
+How to manage cookies
+You can set your browser not to accept cookies, and the above website tells you how to remove cookies from your browser. However, in a few cases, some of our website features may not function as a result.
+
+Collection of Data from Minors:
+We do not knowingly collect personal information from children under the age of 13. 
+If you are a parent or guardian of a child under the age of 13 and believe he or she has disclosed personal information to us please contact us using Discord. 
+For residents of the EEA, where processing of personal information is based on consent, we will not knowingly engage in that processing for users under the age of consent established by applicable data protection law. If we learn that we are engaged in that processing with such users, we will halt such processing and will take reasonable measures to promptly remove applicable information from our records.
+
+Privacy policies of other websites
+The Our Company website contains links to other websites. Our privacy policy applies only to our website, so if you click on a link to another website, you should read their privacy policy.
+000webhost (https://www.000webhost.com) hosts our website, database, and files for our website, may collect more information from you in the process, you should read their privacy policy.
+Heroku (https://www.heroku.com/) hosts our bot (messagelogbot), may collect more information from you in the process, you should read their privacy policy.
+
+Do Not Track (DNT) Signals:
+Our Services currently do not respond to “Do Not Track” (DNT) signals and operate as described in this Privacy Policy whether or not a DNT signal is received, as there is no consistent industry standard for compliance.
+
+Changes to our privacy policy
+We keep our privacy policy under regular review and places any updates on this web page. This privacy policy was last updated on 14 August 2019. All times and dates are based on Universal Coordinated Time (UTC).
+
+How to contact us
+If you have any questions about Our Company’s privacy policy, the data we hold on you, or you would like to exercise one of your data protection rights, please do not hesitate to contact us. The sole method of contact which guarantees a response is via Discord. If you do not share a server with me on Discord, you may send a friend request.
+
+Discord: RandomGamer123#5222 (Discord ID: 156390113654341632)
+
+How to contact the appropriate authority
+Should you wish to report a complaint or if you feel that we have not addressed your concern in a satisfactory manner, you may contact the Information Commissioner’s Office, or relevant privacy authorities, please note that the Terms and Conditions, at https://random314.000webhostapp.com/termsandconditions.txt may limit your ability to do so, unless in certain conditions.
+

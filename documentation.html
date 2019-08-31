@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Online TWOW Voting Documentation</title>
+</head>
+<body>
+<h1>Documentation:</h1>
+<h3>Modes</h3>
+<ul>
+	<li><code>signup</code> - Outputs contestant information in format [id,last_known_username,timestamp] to the google sheet.</li><br>
+	<li><code>respond</code> - Allows contestants to respond, contestants are defined by a json list. The responses will be outputted in format [id,last_known_username,timestamp,response] to the google sheet.</li><br>
+	<li><code>signup-r</code> - Allows anyone to respond, automatically signing them to the json list. The responses will be outputted in the same format as <code>respond</code></li><br>
+	<li><code>respond-d</code> - Allows anyone to respond, but not adding them to the json list, intended for dummy responses. The responses will be outputted in the same format as <code>respond</code></li><br>
+	<li><code>vote</code> - Allows anyone to vote, their votes will be outputted in format [id,last_known_username,timestamp,vote] to the google sheet.</li><br>
+	<li><code>nothing</code> - Does not allow anyone to do anything.</li><br>
+	<li><code>hiatus</code> - Does not allow anyone to do anything. Displays a yellow banner saying that this minitwow is on hiatus on the relevant page.</li><br>
+	<li><code>cancelled</code> - Does not allow anyone to do anything. Displays a red banner saying that this minitwow is cancelled on the relevant page.</li><br>
+	<li><code>ended</code> - Does not allow anyone to do anything. Displays a green banner saying that this minitwow has ended on the relevant page.</li><br>
+	<li><code>x-[custom]</code> - Custom mode, by default does not do anything. [custom] can be replaced by any string for the maximum of 8 characters, contact me if you need custom implementations.</li>
+</ul>
+<footer>By using this site, you agree to our <a href = "https://random314.000webhostapp.com/gdprprivacypolicy.txt"> Privacy Policy</a> and our <a href = "https://random314.000webhostapp.com/termsandconditions.txt">Terms and Conditions</a>. Your IP Address is not tracked on this particular page. No cookies are placed by this particular page.</footer>
+</html>
