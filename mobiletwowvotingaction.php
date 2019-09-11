@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST["user"])) {
+if (isset($_POST["user"]) and isset($_POST["token"])) {
 	if (isset($_POST["minitwow"])) {
 		$minitwowname = $_POST["minitwow"];
 		$configs = include("./private/config.php");
@@ -25,6 +25,22 @@ if (isset($_POST["user"])) {
 		require_once $configs["googleapifilev2"];
 		require_once "./googleapi/google-api-php-client-2.2.3/vendor/google/apiclient-services/src/Google/Service/Sheets.php";
 		$client = new \Google_Client();
+		$sql2 = "SELECT mobiletokenexpire, mobilelongtermtoken, last_known_username FROM user_verify_table WHERE discord_id = ?";
+		$stmt2 = $conn->prepare($sql2); 
+		$stmt2->execute([$_POST["user"]]);
+		while ($row = $stmt2->fetch(PDO::FETCH_ASSOC)) {
+			if (is_null($row["mobilelongtermtoken"]) or is_null($row["mobiletokenexpire"])) {
+			} else {
+				if (time() > $row["mobiletokenexpire"]) {
+				} else {
+					if (hash_equals(hash("sha256",$row["mobilelongtermtoken"].(string)$_POST["user"].(string)$row["mobiletokenexpire"]),$_POST["token"])) {
+					} else {
+						echo (json_encode(["failure","Verification error. Try logging out and logging back in again."]));
+						die(190);
+					}
+				}
+			}
+		}
 		$client->setApplicationName('online-twow-voting');
 		$client->setScopes([\Google_Service_Sheets::SPREADSHEETS]);
 		$client->setAccessType('offline');
