@@ -68,6 +68,8 @@ if (isset($_SESSION["user"])) {
 				} else {
 				$tbl .= htmlspecialchars(gmdate("Y-m-d H:i:s", (int)$row[($order[$i])]));
 				}
+			} elseif ($order[$i] == "host_id") {
+				$tbl .= htmlspecialchars((json_decode($row[($order[$i])],TRUE))["displayname"]);
 			} else {
 				$tbl .= htmlspecialchars($row[($order[$i])]);
 			}
