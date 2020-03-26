@@ -103,6 +103,10 @@ if (isset($_SESSION["user"])) {
 			$content = str_replace(' href="-vote"',' style="opacity:0.5"',$content);
 			$content = str_replace(' href="-signup"',' style="opacity:0.5"',$content);
 			$_SESSION["rspmode"] = $data["mode"];
+		} elseif (in_array($data["mode"],["nothing","cancelled","hiatus","ended"])) {
+			$content = str_replace(' href="-vote"',' style="opacity:0.5"',$content);
+			$content = str_replace(' href="-respond"',' style="opacity:0.5"',$content);
+			$content = str_replace(' href="-signup"',' style="opacity:0.5"',$content);
 		}
 		echo $content;
 	} else { 
