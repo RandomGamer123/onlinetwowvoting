@@ -137,11 +137,12 @@ if (isset($_SESSION["user"])) {
 				echo("Mode related error or mode conflict. Please contact me if you accessed this through the main page.");
 				die(127);
 			}
-			array_push($contestantsdata["responses"],[$_SESSION["user"],$response]);
+			$ucount = count($contestantsdata["responses"])+1;
+			array_push($contestantsdata["responses"],[$_SESSION["user"],$response,(string)$ucount]);
 			$spreadsheetId = $data["google_sheets_id"];
 			$range = "Responses!A1:C1";
 			$valueRange = new Google_Service_Sheets_ValueRange();
-			$valueRange->setValues(["values" => [$_SESSION["user"],$lclname,time(),$response]]);
+			$valueRange->setValues(["values" => [$_SESSION["user"],$lclname,time(),$response,(string)$ucount]]);
 			$conf = ["valueInputOption" => "RAW"];
 			$service->spreadsheets_values->append($spreadsheetId, $range, $valueRange, $conf);
 			$update = "UPDATE minitwowinfo SET contestantsdata = ? WHERE uniquename = ?";
