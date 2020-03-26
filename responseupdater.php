@@ -64,6 +64,23 @@ if (isset($_SESSION["user"])) {
 							 * With the Google_Client we can get a Google_Service_Sheets service object to interact with sheets
 							 */
 							$service = new \Google_Service_Sheets($client);
+							$spreadsheetId = $data["google_sheets_id"];
+							$range = "Responses!A2:D";
+							$response = $service->spreadsheets_values->get($spreadsheetId, $range);
+							$vallist = $response["values"];
+							$exrsp = $contestantsdata["responses"];
+							for ($i = 0; $i < count($vallist); $i++) {
+								$lclobj = [(string)$vallist[$i][0],$vallist[$i][3]];
+								if (in_array($lclobj,$exrsp)) {
+									continue;
+								} else {
+									array_push($contestantsdata["responses"],$lclobj);
+								}
+							}
+							$update = "UPDATE minitwowinfo SET contestantsdata = ? WHERE uniquename = ?";
+							$conn->prepare($update)->execute([json_encode($contestantsdata),$minitwowname]);
+							echo("Responses from Google Sheets merged into database.");
+							die(179);
 						} else {
 						echo("Confirmation credentials not found, please access this through the admin options page, if you did so, please contact Random.");
 						die(175);
