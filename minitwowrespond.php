@@ -71,17 +71,17 @@ if (isset($_SESSION["user"])) {
 			echo('<h2>Description of '.htmlspecialchars($minitwowname).':</h2><p>'.htmlspecialchars($data["description"]).'</p>');
 			echo('<h4><a href='.htmlspecialchars($data['discord_link']).'>Link to Discord server.</a></h4>');
 			echo('<h4>Current mode: '.htmlspecialchars($data["mode"]).'</h4> (See <a href=http://random314.000webhostapp.com/documentation.html> here </a> for more detail.)');
+			echo('<h3> Your responses: </h3> <ul>');
+			$anyvotes = False;
 			for ($i = 0; $i < count($contestantsdata["responses"]); $i++) {
-				$anyvotes = False;
-				echo('<h3> Your responses: </h3> <ul>');
 				if ($contestantsdata["responses"][$i][0] == $_SESSION["user"]) {
 					echo('<li>'.htmlspecialchars($contestantsdata["responses"][$i][1]).'</li>');
 					$anyvotes = True;
 				}
-				echo('</ul>');
-				if ($anyvotes == False) {
-					echo("You have not submitted any responses yet.");
-				}
+			}
+			echo('</ul>');
+			if ($anyvotes == False) {
+				echo("You have not submitted any responses yet.");
 			}
 			echo("Please note the policy for dealing with repetitive submissions in each minitwow is different, your latest response may count as an edit, or a DRP, please DM the host with more info if there may be any ambiguity.");
 			echo('<form action="http://random314.000webhostapp.com/twowvotingaction.php" method="post">Response:<input type="text" name="response"><br><input type="hidden" id="mode" name="mode" value="'.htmlspecialchars($data["mode"]).'"><br><input type="submit" value="Submit Response"</input></form>');
