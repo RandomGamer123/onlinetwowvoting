@@ -109,6 +109,9 @@ if (isset($_SESSION["user"])) {
 			$content = str_replace(' href="-signup"',' style="opacity:0.5"',$content);
 		}
 		echo $content;
+		if (in_array($_SESSION["user"],(json_decode($data["host_id"],TRUE))["admins"])) {
+			echo("<br> You are an admin in this minitwow, for admin options, click <a href=\"https://random314.000webhostapp.com/twowadminoptions.html?minitwow=".htmlspecialchars($minitwowname)."\">here</a>.");
+		}
 	} else { 
 		$log = $ip." ".time()." Logged in as ".$_SESSION["username"]." (".$_SESSION["user"].") twowvotingminitwow.php - No minitwow chosen. \n";
 		fwrite($logf,$log);?>
