@@ -65,12 +65,12 @@ if (isset($_SESSION["user"])) {
 							 */
 							$service = new \Google_Service_Sheets($client);
 							$spreadsheetId = $data["google_sheets_id"];
-							$range = "Responses!A2:D";
+							$range = "Responses!A2:E";
 							$response = $service->spreadsheets_values->get($spreadsheetId, $range);
 							$vallist = $response["values"];
 							$exrsp = $contestantsdata["responses"];
 							for ($i = 0; $i < count($vallist); $i++) {
-								$lclobj = [(string)$vallist[$i][0],$vallist[$i][3]];
+								$lclobj = [(string)$vallist[$i][0],$vallist[$i][3],$vallist[$i][4]];
 								if (in_array($lclobj,$exrsp)) {
 									continue;
 								} else {
