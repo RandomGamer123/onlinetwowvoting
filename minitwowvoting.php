@@ -1,4 +1,14 @@
 <?php
+function psrand($rspnum,$screennum) {
+	$lrseed = (int)$rspnum*(int)$screennum+(13**5);
+	$m = 2147483647;
+	$a = 16807;
+	$fseed = floor((((round(fmod(((float)$lrseed*exp(1)),1)*$m*$a))%$m)/$m)*(10**7))/(10**7);
+	return((round($fseed*$m*$a))%$m);
+}
+function cmp($a,$b) {
+	return($a[2]-$b[2]);
+}
 session_start();
 if (isset($_SESSION["user"])) {
 	$ip = $_SERVER["REMOTE_ADDR"];
@@ -64,9 +74,72 @@ if (isset($_SESSION["user"])) {
 			$contestantsdata = json_decode($data["contestantsdata"],TRUE);
 			echo('<h2>Description of '.htmlspecialchars($minitwowname).':</h2><p>'.htmlspecialchars($data["description"]).'</p>');
 			echo('<h4><a href='.htmlspecialchars($data['discord_link']).'>Link to Discord server.</a></h4><br>');
-			echo('<h2>Voting Screens:</h2>');
-			for ($i = 0; $i < count($contestantsdata["votingscreens"]); $i++) {
-				echo('<img src='.htmlspecialchars($contestantsdata["votingscreens"][$i]).' alt=votingscreenimage'.(string)$i.'><br>');
+			if ($contestantsdata["screenmode"] == "t") {
+				echo('<h2>Voting Screens:</h2>');
+				for ($i = 0; $i < count($contestantsdata["votingscreens"]); $i++) {
+					echo('<img src='.htmlspecialchars($contestantsdata["votingscreens"][$i]).' alt=votingscreenimage'.(string)$i.'><br>');
+				}
+			} elseif ($contestantsdata["screenmode"] == "n") {
+				echo('<h2>Voting Screens:</h2>');
+				if (isset($_POST["screenname"])) {
+					//DO STUFF
+					$formatted = TRUE;
+					$responses = $contestantsdata["responses"];
+					$screenarr = str_split($_POST["screenname"]);
+					$screenid = 0;
+					for ($i = 0; $i < count($screenarr); $i++) {
+						$screenid = $screenid + ((ord($screenarr[$i])-65)*(26**$i));
+					}
+					for ($i = 0; $i < count($responses); $i++) {
+						if(count($responses[$i])==3) {
+							$responses[$i][2] = psrand($responses[$i][2],$screenid);
+						} else {
+							echo("Some responses may not be in the new response format which contains the data needed for screen generation, please contact Random.");
+							$formatted = FALSE;
+							break;
+						}
+					}
+					if ($formatted == TRUE) {
+						//DO MORE STUFF
+						usort($responses,"cmp");
+						$sl = $contestantsdata["screenlength"];
+						if (count($responses) > $sl*26) {
+							echo("WARNING: There are too many responses for all responses to be included on screens to be generated using alphabetical characters based on the settings given, please contact Random if you want to vote on all of them. (As if this will ever be seen by anyone).");
+						}
+						echo("<div class=\"screencontain\">");
+						$rspiter = floor((count($responses)-1)/$sl);
+						$rspr = 0;
+						if (count($responses)%$sl == 0) {
+							$rspr = $sl;
+						} else {
+							$rspr = count($responses)%$sl;
+						}
+						for ($i = 0; $i < $rspiter; $i++) {
+							echo("<div class=\"screen\">");
+							echo("Screen ".htmlspecialchars($_POST["screenname"]).htmlspecialchars(chr($i+65)));
+							for ($j = 0; $j < $sl; $j++) {
+								echo("<br>");
+								echo(htmlspecialchars(chr($j+65).": "));
+								echo(htmlspecialchars($responses[$i*$sl+$j][1]));
+							}
+							echo("</div>");
+						}
+						echo("<div class=\"screenlast\">");
+						echo("Screen ".htmlspecialchars($_POST["screenname"]).htmlspecialchars(chr($rspiter+65)));
+						for ($i = 0; $i < $rspr; $i++) {
+							echo("<br>");
+							echo(htmlspecialchars(chr($i+65).": "));
+							echo(htmlspecialchars($responses[$rspiter*$sl+$i][1]));
+						}
+						echo("</div></div>");
+					}
+				} else { ?>
+					<p> Generate a series of screens by putting a 4 character long alphabetic screen name (Only capital letters).
+					<form name="screennameform" method="post" action ="">
+					<input type="text" id="screenname" name="screenname" pattern="[A-Z]{4}" title="Four letter alphabetic screen name" required />
+					<input type="Submit" value="Generate Screen!" />
+					</form>
+				<?php }
 			}
 			$anyvotes = False;
 			echo('<h3> Your votes: </h3> <ul>');
