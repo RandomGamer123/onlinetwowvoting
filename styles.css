@@ -62,7 +62,7 @@ b.horizontalnavr {
 	border: 4px solid blue;
 }
 .screencontain {
-	height: 400px;
+	max-height: 400px;
 	background-color: #a6a6a6;
 	overflow: auto;
 }
