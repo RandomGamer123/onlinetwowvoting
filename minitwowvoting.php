@@ -103,12 +103,13 @@ if (isset($_SESSION["user"])) {
 						//DO MORE STUFF
 						usort($responses,"cmp");
 						$sl = $contestantsdata["screenlength"];
+						$rspiter = floor((count($responses)-1)/$sl);
+						$rspr = 0;
 						if (count($responses) > $sl*26) {
+							$rspiter = 25;
 							echo("WARNING: There are too many responses for all responses to be included on screens to be generated using alphabetical characters based on the settings given, please contact Random if you want to vote on all of them. (As if this will ever be seen by anyone).");
 						}
 						echo("<div class=\"screencontain\">");
-						$rspiter = floor((count($responses)-1)/$sl);
-						$rspr = 0;
 						if (count($responses)%$sl == 0) {
 							$rspr = $sl;
 						} else {
