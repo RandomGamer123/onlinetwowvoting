@@ -122,8 +122,31 @@ if (isset($_POST["user"]) and isset($_POST["token"])) {
 				$range = "Voting!A1:D1";
 				$conf = ["valueInputOption" => "RAW"];
 				$votestr = $_POST["votes"];
+				$votersp = "";
 				$votes = explode(",", $votestr);
 				for($i = 0; $i < count($votes); $i++) {
+					$tvote = $votes[$i];
+					if ($tvote[0] == "[") {
+						$tvote = substr($tvote,1);
+					}
+					if (substr($tvote,-1) == "]") {
+						$tvote = substr($tvote,0,-1);
+					}
+					if (preg_match("/((MEGA)|([A-Z]{5}))\ [A-Z]+/",$tvote)) {
+						$tvote = (explode(" ",$tvote,2))[1];
+						if(strlen(count_chars($tvote,3)) == strlen($tvote)) { //good vote
+						} else {
+							if ($votersp == "") {
+								$votersp = "Something in your vote may be wrong, here is a list of votes that may have issues, these votes were still sent:\n";
+							}
+							$votersp = $votersp.$votes[$i]." -Failed unique character check, check for duplicate characters \n";
+						}
+					} else {
+						if ($votersp == "") {
+							$votersp = "Something in your vote may be wrong, here is a list of votes that may have issues, these votes were still sent:\n";
+						}
+						$votersp = $votersp.$votes[$i]." -Failed regex syntax check \n";
+					}
 					$valueRange = new Google_Service_Sheets_ValueRange();
 					$valueRange->setValues(["values" => [$_POST["user"],$_POST["username"],time(),$votes[$i]]]);
 					$service->spreadsheets_values->append($spreadsheetId, $range, $valueRange, $conf);
@@ -131,7 +154,10 @@ if (isset($_POST["user"]) and isset($_POST["token"])) {
 				}
 				$update = "UPDATE minitwowinfo SET contestantsdata = ? WHERE uniquename = ?";
 				$conn->prepare($update)->execute([json_encode($contestantsdata),$minitwowname]);
-				echo (json_encode(["success","Votes: ".htmlspecialchars($votestr)." sent to ".htmlspecialchars($minitwowname)]));
+				if ($votersp == "") {
+					$votersp = "All your votes have been checked using an automatic script, finding no issues. Note that this script does not check for missing characters.";
+				}
+				echo (json_encode(["success","Votes: ".htmlspecialchars($votestr)." sent to ".htmlspecialchars($minitwowname)."\n".$votersp]));
 			}
 		} elseif ((($data["mode"] == "respond") or ($data["mode"] == "respond-d") or ($data["mode"] == "signup-r")) and ($_POST["mode"] == "respond" or $_POST["mode"] == "respond-d" or $_POST["mode"] == "signup-r")) {
 			$contestantsdata = json_decode($data["contestantsdata"],TRUE);
