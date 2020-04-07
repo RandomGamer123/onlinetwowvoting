@@ -93,7 +93,7 @@ if (isset($_SESSION["user"])) {
 					if (substr($tvote,-1) == "]") {
 						$tvote = substr($tvote,0,-1);
 					}
-					if (preg_match("/((MEGA)|([A-Z]{5}))\ [A-Z]+/",$tvote)) {
+					if (preg_match("/(((MEGA)\ [!-~]+)|([A-Z]{5}\ [A-Z]+))/",$tvote)) {
 						$tvote = (explode(" ",$tvote,2))[1];
 						if(strlen(count_chars($tvote,3)) == strlen($tvote)) { //good vote
 						} else {
@@ -116,7 +116,7 @@ if (isset($_SESSION["user"])) {
 				$update = "UPDATE minitwowinfo SET contestantsdata = ? WHERE uniquename = ?";
 				$conn->prepare($update)->execute([json_encode($contestantsdata),$minitwowname]);
 				if ($votersp == "") {
-					$votersp = "All your votes have been checked using an automatic script, finding no issues. Note that this script does not check for missing characters.";
+					$votersp = "All your votes have been checked using an automatic script, finding no issues. Note that this script does not check for missing characters, and therefore cannot guarantee 100% that your vote is valid.";
 				}
 				echo ("Votes: ".htmlspecialchars($votestr)." sent to ".htmlspecialchars($minitwowname)."<br>".$votersp);
 			} else {
