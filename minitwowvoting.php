@@ -102,42 +102,60 @@ if (isset($_SESSION["user"])) {
 					if ($formatted == TRUE) {
 						//DO MORE STUFF
 						usort($responses,"cmp");
-						$sl = $contestantsdata["screenlength"];
-						$rspiter = floor((count($responses)-1)/$sl);
-						$rspr = 0;
-						if (count($responses) > $sl*26) {
-							$rspiter = 25;
-							echo("WARNING: There are too many responses for all responses to be included on screens to be generated using alphabetical characters based on the settings given, please contact Random if you want to vote on all of them. (As if this will ever be seen by anyone).");
-						}
-						echo("<div class=\"screencontain\">");
-						if (count($responses)%$sl == 0) {
-							$rspr = $sl;
-						} else {
-							$rspr = count($responses)%$sl;
-						}
-						for ($i = 0; $i < $rspiter; $i++) {
-							echo("<div class=\"screen\">");
-							echo("Screen ".htmlspecialchars($_POST["screenname"]).htmlspecialchars(chr($i+65)));
-							for ($j = 0; $j < $sl; $j++) {
-								echo("<br>");
-								echo(htmlspecialchars(chr($j+65).": "));
-								echo(htmlspecialchars($responses[$i*$sl+$j][1]));
+						if ($_POST["screenname"] !== "MS") {
+							$sl = $contestantsdata["screenlength"];
+							$rspiter = floor((count($responses)-1)/$sl);
+							$rspr = 0;
+							if (count($responses) > $sl*26) {
+								$rspiter = 25;
+								echo("WARNING: There are too many responses for all responses to be included on screens to be generated using alphabetical characters based on the settings given, please contact Random if you want to vote on all of them. (As if this will ever be seen by anyone).");
 							}
-							echo("</div>");
-						}
-						echo("<div class=\"screenlast\">");
-						echo("Screen ".htmlspecialchars($_POST["screenname"]).htmlspecialchars(chr($rspiter+65)));
-						for ($i = 0; $i < $rspr; $i++) {
-							echo("<br>");
-							echo(htmlspecialchars(chr($i+65).": "));
-							echo(htmlspecialchars($responses[$rspiter*$sl+$i][1]));
+							echo("<div class=\"screencontain\">");
+							if (count($responses)%$sl == 0) {
+								$rspr = $sl;
+							} else {
+								$rspr = count($responses)%$sl;
+							}
+							for ($i = 0; $i < $rspiter; $i++) {
+								echo("<div class=\"screen\">");
+								echo("Screen ".htmlspecialchars($_POST["screenname"]).htmlspecialchars(chr($i+65)));
+								for ($j = 0; $j < $sl; $j++) {
+									echo("<br>");
+									echo(htmlspecialchars(chr($j+65).": "));
+									echo(htmlspecialchars($responses[$i*$sl+$j][1]));
+								}
+								echo("</div>");
+							}
+							echo("<div class=\"screenlast\">");
+							echo("Screen ".htmlspecialchars($_POST["screenname"]).htmlspecialchars(chr($rspiter+65)));
+							for ($i = 0; $i < $rspr; $i++) {
+								echo("<br>");
+								echo(htmlspecialchars(chr($i+65).": "));
+								echo(htmlspecialchars($responses[$rspiter*$sl+$i][1]));
+							}
+						} else {
+							echo("<div class=\"screencontain\">");
+							echo("<div class=\"screenlast\">");
+							echo("Screen "."MEGA (Megascreen)");
+							$rspr = 0;
+							if (count($responses) > 94) {
+								$rspr = 94;
+								echo("<br> Note: As there are more than 94 responses, the megascreen does not contain all responses. Please contact Random if there are somehow more than 94 responses.");
+							} else {
+								$rspr = count($responses);
+							}
+							for ($i = 0; $i < $rspr; $i++) {
+								echo("<br>");
+								echo(htmlspecialchars(chr($i+33).": "));
+								echo(htmlspecialchars($responses[$i][1]));
+							}
 						}
 						echo("</div></div>");
 					}
 				} else { ?>
-					<p> Generate a series of screens by putting a 4 character long alphabetic screen name (Only capital letters).
+					<p> Generate a series of screens by putting a 4 character long alphabetic screen name (Only capital letters). Type "MS" without the quotes to generate the megascreen.
 					<form name="screennameform" method="post" action ="">
-					<input type="text" id="screenname" name="screenname" pattern="[A-Z]{4}" title="Four letter alphabetic screen name" required />
+					<input type="text" id="screenname" name="screenname" pattern="([A-Z]{4})|(MS)" title="Four letter alphabetic screen name" required />
 					<input type="Submit" value="Generate Screen!" />
 					</form>
 				<?php }
