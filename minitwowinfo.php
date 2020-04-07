@@ -24,7 +24,7 @@ if (isset($_POST["minitwow"])) {
 		if (in_array($_POST["user"],$data["contestants"])) {
 			$alive = "true";
 		}
-		echo (json_encode([$row["description"],$row["discord_link"],$row["host_id"],$alive,$data["votingscreens"],sizeof($data["votingscreens"])]));
+		echo (json_encode([$row["description"],$row["discord_link"],$row["host_id"],$alive,$data["votingscreens"],sizeof($data["votingscreens"]),$data["screenmode"]]));
 	}
 }
 ?>
