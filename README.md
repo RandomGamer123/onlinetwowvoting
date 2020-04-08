@@ -10,6 +10,6 @@ Feel free to DM me on Discord if you have any questions, or have found security 
 
 Mobile application made by MIT's App Inventor 2, current distribution methods:
 
-Download from Google Drive: https://drive.google.com/file/d/15rinEE3Zw2XXmNLjFkVG9lEfVSTSnkoV/view?usp=sharing
+Download from Google Drive: https://drive.google.com/file/d/1hxzl90X09o3BqwUBdJbyinzRm8SMprU5
 
 Download from Amazon Appstore: https://www.amazon.com/dp/B07X5NTWBQ
