@@ -10,7 +10,7 @@ function cmp($a,$b) {
 	return($a[2]-$b[2]);
 }
 if (isset($_POST["minitwow"]) and (isset($_POST["screenname"]))) {
-	if (preg_match("/[A-Z]{4}/", $_POST["screenname"])) {
+	if (preg_match("/(MS)|([A-Z]{4})/", $_POST["screenname"])) {
 		$minitwowname = $_POST["minitwow"];
 		$configs = include("./private/config.php");
 		$servername = $configs["servername"];
@@ -64,33 +64,50 @@ if (isset($_POST["minitwow"]) and (isset($_POST["screenname"]))) {
 					if ($formatted == TRUE) {
 						//DO MORE STUFF
 						usort($responses,"cmp");
-						$sl = $contestantsdata["screenlength"];
-						$rspiter = floor((count($responses)-1)/$sl);
-						$rspr = 0;
-						if (count($responses) > $sl*26) {
-							$rspiter = 25;
-							$mi = 2;
-						}
-						if (count($responses)%$sl == 0) {
-							$rspr = $sl;
-						} else {
-							$rspr = count($responses)%$sl;
-						}
 						$output = "";
-						for ($i = 0; $i < $rspiter; $i++) {
-							$output = $output."Screen ".htmlspecialchars($_POST["screenname"]).htmlspecialchars(chr($i+65));
-							for ($j = 0; $j < $sl; $j++) {
-								$output = $output."\n";
-								$output = $output.chr($j+65).": ";
-								$output = $output.($responses[$i*$sl+$j][1]);
+						if ($_POST["screenname"] !== "MS") {
+							$sl = $contestantsdata["screenlength"];
+							$rspiter = floor((count($responses)-1)/$sl);
+							$rspr = 0;
+							if (count($responses) > $sl*26) {
+								$rspiter = 25;
+								$mi = 2;
+								$output = $output."WARNING: There are too many responses for all responses to be included on screens to be generated using alphabetical characters based on the settings given, please contact Random if you want to vote on all of them. (As if this will ever be seen by anyone).";
 							}
-							$output = $output."\n\n";
-						}
-						$output = $output."Screen ".htmlspecialchars($_POST["screenname"]).htmlspecialchars(chr($rspiter+65));
-						for ($i = 0; $i < $rspr; $i++) {
-							$output = $output."\n";
-							$output = $output.(chr($i+65).": ");
-							$output = $output.($responses[$rspiter*$sl+$i][1]);
+							if (count($responses)%$sl == 0) {
+								$rspr = $sl;
+							} else {
+								$rspr = count($responses)%$sl;
+							}
+							for ($i = 0; $i < $rspiter; $i++) {
+								$output = $output."Screen ".htmlspecialchars($_POST["screenname"]).htmlspecialchars(chr($i+65));
+								for ($j = 0; $j < $sl; $j++) {
+									$output = $output."\n";
+									$output = $output.chr($j+65).": ";
+									$output = $output.($responses[$i*$sl+$j][1]);
+								}
+								$output = $output."\n\n";
+							}
+							$output = $output."Screen ".htmlspecialchars($_POST["screenname"]).htmlspecialchars(chr($rspiter+65));
+							for ($i = 0; $i < $rspr; $i++) {
+								$output = $output."\n";
+								$output = $output.(chr($i+65).": ");
+								$output = $output.($responses[$rspiter*$sl+$i][1]);
+							}
+						} else {
+							$output = $output.("Screen MEGA (Megascreen)");
+							$rspr = 0;
+							if (count($responses) > 94) {
+								$rspr = 94;
+								$output = $output."\n Note: As there are more than 94 responses, the megascreen does not contain all responses. Please contact Random if there are somehow more than 94 responses.";
+							} else {
+								$rspr = count($responses);
+							}
+							for ($i = 0; $i < $rspr; $i++) {
+								$output = $output.("\n");
+								$output = $output.(chr($i+33).": ");
+								$output = $output.(htmlspecialchars($responses[$i][1]));
+							}
 						}
 						echo(json_encode(["success","n",$mi,$output]));
 						die(182);
