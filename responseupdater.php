@@ -35,7 +35,7 @@ if (isset($_SESSION["user"])) {
 			$data = $row;
 		}
 		if (in_array($_SESSION["user"],(json_decode($data["host_id"],TRUE))["admins"])) {
-			if(((isset($_SESSION["ot_salt1"]))and(isset($_SESSION["hashverify1"]))and(isset($_SESSION["sh1_expiry"]))and(isset($_POST["rspupdate"])))) {
+			if(((isset($_SESSION["ot_salt1"]))and(isset($_SESSION["hashverify1"]))and(isset($_SESSION["sh1_expiry"]))and(isset($_POST["rspupdate"]))and(isset($_POST["mode"])))) {
 				if($_SESSION["sh1_expiry"] > time()) {
 					if(hash_equals((hash("sha256",$_SESSION["user"].$minitwowname.($_SESSION["ot_salt1"]))),$_SESSION["hashverify1"])) {
 						unset($_SESSION["ot_salt1"]);
@@ -68,14 +68,24 @@ if (isset($_SESSION["user"])) {
 							$range = "Responses!A2:E";
 							$response = $service->spreadsheets_values->get($spreadsheetId, $range);
 							$vallist = $response["values"];
-							$exrsp = $contestantsdata["responses"];
-							for ($i = 0; $i < count($vallist); $i++) {
-								$lclobj = [(string)$vallist[$i][0],$vallist[$i][3],$vallist[$i][4]];
-								if (in_array($lclobj,$exrsp)) {
-									continue;
-								} else {
-									array_push($contestantsdata["responses"],$lclobj);
+							if ($_POST["mode"] == "merge") {
+								$exrsp = $contestantsdata["responses"];
+								for ($i = 0; $i < count($vallist); $i++) {
+									$lclobj = [(string)$vallist[$i][0],$vallist[$i][3],$vallist[$i][4]];
+									if (in_array($lclobj,$exrsp)) {
+										continue;
+									} else {
+										array_push($contestantsdata["responses"],$lclobj);
+									}
 								}
+							}
+							elseif ($_POST["mode"] == "push") {
+								$newresp = [];
+								for ($i = 0; $i < count($vallist); $i++) {
+									$lclobj = [(string)$vallist[$i][0],$vallist[$i][3],$vallist[$i][4]];
+									array_push($newresp,$lclobj);
+								}
+								$contestantsdata["responses"] = $newresp;
 							}
 							$update = "UPDATE minitwowinfo SET contestantsdata = ? WHERE uniquename = ?";
 							$conn->prepare($update)->execute([json_encode($contestantsdata),$minitwowname]);
