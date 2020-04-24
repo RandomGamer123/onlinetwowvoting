@@ -72,6 +72,10 @@ if (isset($_SESSION["user"])) {
 			<h3>Admin Options:</h3><br>
 			<form action="/responseupdater.php" method="post">
 			<input type="hidden" id="rspupdate" name="rspupdate" value="confirm">
+			<input type="radio" id="push" name="mode" value="push" required>
+			<label for="push">Push responses from Google Sheets to database, overriding existing responses.</label><br>
+			<input type="radio" id="merge" name="mode" value="merge" required>
+			<label for="merge">Merge responses from Google Sheets to database, not overriding existing responses.</label><br>
 			<input type="submit" value="Update responses in database from connected Google Sheets.">
 			</form>
 			</body>
