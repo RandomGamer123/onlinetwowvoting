@@ -40,12 +40,19 @@ if (isset($_POST["user"]) and isset($_POST["token"])) {
 				$client->setAuthConfig($configs["googlecredentials"]);
 				if (($data["mode"] == "signup") and ($_POST["mode"] = "signup")) {
 					$contestantsdata = json_decode($data["contestantsdata"],TRUE);
-					if (in_array($_POST["targetuser"],$contestantsdata["contestants"])) {
+					$iscontestant = false;
+					foreach ($contestantsdata["contestants"] as $value) {
+						if ($_POST["user"] == $value[0]) {
+							$alive = "true";
+							break;
+						}
+					}
+					if ($iscontestant) {
 						echo(json_encode(["failure","You have already signed up to this minitwow."]));
 						die(123);
 					} else {
 						$service = new \Google_Service_Sheets($client);
-						array_push($contestantsdata["contestants"],$_POST["targetuser"]);
+						array_push($contestantsdata["contestants"],[$_POST["targetuser"],1]);
 						$spreadsheetId = $data["google_sheets_id"];
 						$range = "Signup!A1:C1";
 						$valueRange = new Google_Service_Sheets_ValueRange();
@@ -99,7 +106,14 @@ if (isset($_POST["user"]) and isset($_POST["token"])) {
 		if ($data["mode"] == "signup") {
 			if ($_POST["mode"]=="signup") {
 				$contestantsdata = json_decode($data["contestantsdata"],TRUE);
-				if (in_array($_POST["user"],$contestantsdata["contestants"])) {
+				$iscontestant = false;
+				foreach ($contestantsdata["contestants"] as $value) {
+					if ($_POST["user"] == $value[0]) {
+						$iscontestant = true;
+						break;
+					}
+				}
+				if ($iscontestant) {
 					echo(json_encode(["failure","You have already signed up to this minitwow."]));
 					die(123);
 				} else {
@@ -132,8 +146,10 @@ if (isset($_POST["user"]) and isset($_POST["token"])) {
 					if (substr($tvote,-1) == "]") {
 						$tvote = substr($tvote,0,-1);
 					}
-					if (preg_match("/((MEGA)|([A-Z]{5}))\ [A-Z]+/",$tvote)) {
-						$tvote = (explode(" ",$tvote,2))[1];
+					if (preg_match("/(((MEGA)\ [!-~]+)|([A-Z]{5}\ [A-Z]+)|([A-Z]+))/",$tvote)) {
+						if (strpos($tvote, " ")) {
+							$tvote = (explode(" ",$tvote,2))[1];
+						}
 						if(strlen(count_chars($tvote,3)) == strlen($tvote)) { //good vote
 						} else {
 							if ($votersp == "") {
@@ -168,24 +184,31 @@ if (isset($_POST["user"]) and isset($_POST["token"])) {
 				echo (json_encode(["failure","Response not received, please retry and access this via the main page. If this persists, please contact me."]));
 				die(129);
 			}
+			$iscontestant = false;
+			foreach ($contestantsdata["contestants"] as $value) {
+				if ($_POST["user"] == $value[0]) {
+					$iscontestant = true;
+					break;
+				}
+			}
 			if (($data["mode"] == "respond") and ($_POST["mode"] == "respond")) {
-				if (in_array($_POST["user"],$contestantsdata["contestants"])) {
+				if ($iscontestant) {
 				} else {
 					echo (json_encode(["failure","You are not a contestant in this minitwow."]));
 					die(126);
 				}
 			} elseif (($data["mode"] == "respond-d") and ($_POST["mode"] == "respond-d")) {
-				if (in_array($_POST["user"],$contestantsdata["contestants"])) {
+				if ($iscontestant) {
 				} else {
 					$lclname = "DUMMY: ".$lclname;
 				}
 			} elseif (($data["mode"] == "signup-r") and ($_POST["mode"] == "signup-r")) {
 				$alr = "";
-				if (in_array($_POST["user"],$contestantsdata["contestants"])) {
+				if ($iscontestant) {
 					$alr = " You have already signed up to this minitwow. Your response will still be sent.";
 					die(128);
 				} else {
-					array_push($contestantsdata["contestants"],$_POST["user"]);
+					array_push($contestantsdata["contestants"],[$_POST["user"],1]);
 					$spreadsheetId = $data["google_sheets_id"];
 					$range = "Signup!A1:C1";
 					$valueRange = new Google_Service_Sheets_ValueRange();
