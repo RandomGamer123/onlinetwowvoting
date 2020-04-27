@@ -27,8 +27,13 @@ if (isset($_POST["user"])) {
 	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 		$data = json_decode($row["contestantsdata"],true);
 		$output = "";
-		if (in_array($_POST["user"],$data["contestants"])) {
-			$output = "[ALIVE]".$output;
+		$iscontestant = false;
+		foreach ($data["contestants"] as $value) {
+			if ($_POST["user"] == $value[0]) {
+				$output = "[ALIVE]".$output;
+				$iscontestant = true;
+				break;
+			}
 		}
 		$inactive = ["hiatus","cancelled","ended"];
 		if (in_array($row["mode"],$inactive)) {
@@ -39,7 +44,7 @@ if (isset($_POST["user"])) {
 		} else {
 			$output = $output." Deadline: ".$row["deadline"];
 		}
-		if (in_array($_POST["user"],$data["contestants"])) {
+		if ($iscontestant) {
 			array_unshift($array,$output);
 			array_unshift($rawlist,$row["uniquename"]);
 			array_unshift($rawmode,$row["mode"]);
