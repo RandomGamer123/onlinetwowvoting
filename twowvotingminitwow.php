@@ -77,7 +77,14 @@ if (isset($_SESSION["user"])) {
 		$welcome = str_replace("-minitwow",htmlspecialchars($minitwowname),$welcome);
 		$welcome = str_replace("-mode",htmlspecialchars($data["mode"]),$welcome);
 		$contestantsdata = json_decode($data["contestantsdata"],TRUE);
-		if (in_array($_SESSION["user"],$contestantsdata["contestants"])) {
+		$iscontestant = false;
+		foreach ($contestantsdata["contestants"] as $value) {
+			if ($_SESSION["user"] == $value[0]) {
+				$iscontestant = true;
+				break;
+			}
+		}
+		if ($iscontestant) {
 			$welcome = str_replace("-contestant","a contestant",$welcome);
 		} else {
 			$welcome = str_replace("-contestant","a spectator or eliminated contestant",$welcome);
