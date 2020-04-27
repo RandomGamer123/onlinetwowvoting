@@ -21,8 +21,11 @@ if (isset($_POST["minitwow"])) {
 	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 		$alive = "false";
 		$data = json_decode($row["contestantsdata"],True);
-		if (in_array($_POST["user"],$data["contestants"])) {
-			$alive = "true";
+		foreach ($data["contestants"] as $value) {
+			if ($_POST["user"] == $value[0]) {
+				$alive = "true";
+				break;
+			}
 		}
 		echo (json_encode([$row["description"],$row["discord_link"],$row["host_id"],$alive,$data["votingscreens"],sizeof($data["votingscreens"]),$data["screenmode"]]));
 	}
