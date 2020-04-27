@@ -40,13 +40,35 @@ if (isset($_POST["user"]) and isset($_POST["token"])) {
 				$client->setScopes([\Google_Service_Sheets::SPREADSHEETS]);
 				$client->setAccessType('offline');
 				$client->setAuthConfig($configs["googlecredentials"]);
-				if ($data["mode"] == $_POST["mode"]) {
+				if (($data["mode"] == $_POST["mode"]) or (($_POST["mode"] == "respond") and (($data["mode"] == "respond") or ($data["mode"] == "respond-d") or ($data["mode"] == "signup-r")))) {
 					if (($data["deadline"] >= time()) or ($_POST["deadlinebypass"] == 1)) {
-						if ($data["mode"] == "respond") {
-							if (in_array($_POST["user"],$contestantsdata["contestants"])) {
+						if (($data["mode"] == "respond") or ($data["mode"] == "respond-d") or ($data["mode"] == "signup-r")) {
+							$iscontestant = false;
+							foreach ($contestantsdata["contestants"] as $value) {
+								if ($_POST["user"] == $value[0]) {
+									$iscontestant = true;
+									break;
+								}
+							}
+							if ($iscontestant) {
 							} else {
-								echo (json_encode(["failure","You are not a contestant in this minitwow."]));
-								die(126);
+								if ($data["mode"] == "signup-r") {
+									$spreadsheetId = $data["google_sheets_id"];
+									$range = "Signup!A1:C1";
+									$valueRange = new Google_Service_Sheets_ValueRange();
+									$valueRange->setValues(["values" => [$_POST["user"],$_POST["username"],time()]]);
+									$conf = ["valueInputOption" => "RAW"];
+									$service->spreadsheets_values->append($spreadsheetId, $range, $valueRange, $conf);
+									array_push($contestantsdata["contestants"],[$_POST["user"],1]);
+									$update = "UPDATE minitwowinfo SET contestantsdata = ? WHERE uniquename = ?";
+									$conn->prepare($update)->execute([json_encode($contestantsdata),$minitwowname]);
+								} else {
+									if ($data["mode"] == "respond-d") {
+									} else {
+										echo (json_encode(["failure","You are not a contestant in this minitwow."]));
+										die(126);
+									}
+								}
 							}
 							$response = $_POST["response"];
 							$ucount = count($contestantsdata["responses"])+1;
@@ -59,7 +81,7 @@ if (isset($_POST["user"]) and isset($_POST["token"])) {
 							$service->spreadsheets_values->append($spreadsheetId, $range, $valueRange, $conf);
 							$update = "UPDATE minitwowinfo SET contestantsdata = ? WHERE uniquename = ?";
 							$conn->prepare($update)->execute([json_encode($contestantsdata),$minitwowname]);
-							echo (json_encode(["success","Your response: ".htmlspecialchars($response).", has been sent to: ".htmlspecialchars($minitwowname)."\n Please note the policy for dealing with repetitive submissions in each minitwow is different, your latest response may count as an edit, or a DRP, please DM the host with more info if there may be any ambiguity."]));
+							echo (json_encode(["success","Your response: ".htmlspecialchars($response).", has been sent to: ".htmlspecialchars($minitwowname)."\n Please note the policy for dealing with repetitive submissions in each minitwow is different, your latest response may count as an edit, or a DRP, please DM the host with more info if there may be any ambiguity.",$data["mode"]]));
 						} elseif ($data["mode"] == "vote") {
 							$spreadsheetId = $data["google_sheets_id"];
 							$range = "Voting!A1:D1";
@@ -75,8 +97,10 @@ if (isset($_POST["user"]) and isset($_POST["token"])) {
 								if (substr($tvote,-1) == "]") {
 									$tvote = substr($tvote,0,-1);
 								}
-								if (preg_match("/(((MEGA)\ [!-~]+)|([A-Z]{5}\ [A-Z]+))/",$tvote)) {
-									$tvote = (explode(" ",$tvote,2))[1];
+								if (preg_match("/(((MEGA)\ [!-~]+)|([A-Z]{5}\ [A-Z]+)|([A-Z]+))/",$tvote)) {
+									if (strpos($tvote, " ")) {
+										$tvote = (explode(" ",$tvote,2))[1];
+									}
 									if(strlen(count_chars($tvote,3)) == strlen($tvote)) { //good vote
 									} else {
 										if ($votersp == "") {
