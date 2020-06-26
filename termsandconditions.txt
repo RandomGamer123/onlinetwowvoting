@@ -7,7 +7,7 @@ Please read these Terms and Conditions ("Terms", "Terms and Conditions")
 The operator of these services, may hereafter be referred to as "us", "we", or "our".
 
 
-These Terms of Service (ìTermsî), which include and hereby incorporate the Privacy Policy at https://random314.000webhostapp.com/gdprprivacypolicy.txt (ìPrivacy Policyî), are a legal agreement between you and us.
+These Terms of Service (‚ÄúTerms‚Äù), which include and hereby incorporate the Privacy Policy at https://random314.000webhostapp.com/gdprprivacypolicy.txt (‚ÄúPrivacy Policy‚Äù), are a legal agreement between you and us.
 
 Your access to and use of the Service is conditioned on your acceptance of and
  compliance with these Terms.
@@ -20,9 +20,9 @@ If you
 disagree with any part of the terms then you may not access or use the Services, and we may take other actions on related Discord servers.
 
 
-By using our services, you agree that you are above 13, or if you are in the EEA, you are above the age of consent in your country related to privacy laws.
+By using our services, you agree that you are above 13, or above the legal minimum age for digital consent in your jurisdiction, whichever is higher; and you also agree that if you are between 13 or the aforementioned legal minimum age for digital consent, whichever is higher; and the age of majority in your jurisdiction, that your legal guardian or guardians have reviewed and agreed to these Terms and the Privacy Policy.
 
-Any data, text, graphics, photographs and their selection and arrangement, and any other materials uploaded to the Service by you is ìYour Content.î
+Any data, text, graphics, photographs and their selection and arrangement, and any other materials uploaded to the Service by you is ‚ÄúYour Content.‚Äù
  You represent and warrant that Your Content is original to you and that you exclusively own the rights to such content, including the right to grant all of the rights and licenses in these Terms without us incurring any third party obligations or liability arising out of its exercise of such rights and licenses. 
 All of Your Content is your sole responsibility and we are not responsible for any material that you upload, post, submit, or otherwise make available. By uploading, distributing, transmitting, submitting or otherwise using Your Content with the Service, you grant to us a perpetual, nonexclusive, transferable, royalty-free, sublicensable, and worldwide license to use, host, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, perform, and display Your Content for any reason.
 We do not guarantee the accuracy, quality, or integrity of any user content posted.
@@ -60,7 +60,7 @@ of any third-party web sites, services or servers that you visit.
 
 
 
-THE SERVICES AND THE SERVICE MATERIALS ARE PROVIDED "AS IS" AND ìAS AVAILABLEî WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. 
+THE SERVICES AND THE SERVICE MATERIALS ARE PROVIDED "AS IS" AND ‚ÄúAS AVAILABLE‚Äù WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. 
 YOUR USE OF THE SERVICES IS AT YOUR SOLE RISK. IN ADDITION, WHILE WE ATTEMPT TO PROVIDE A GOOD USER EXPERIENCE, WE CANNOT AND DO NOT REPRESENT OR WARRANT THAT THE SERVICES WILL ALWAYS BE SECURE OR ERROR-FREE OR THAT THE SERVICES WILL ALWAYS FUNCTION WITHOUT DELAYS, DISRUPTIONS, OR IMPERFECTIONS. THE FOREGOING DISCLAIMERS SHALL APPLY TO THE EXTENT PERMITTED BY APPLICABLE LAW.
 
 LIMITATION OF LIABILITY
@@ -98,7 +98,7 @@ These Terms complement and do not replace any prior
 
 
 
-These terms were last modified on 12 August 2019. All times and dates are based on Universal Coordinated Time (UTC).
+These terms were last modified on 26 June 2020, and the modified terms will take effect beginning at midnight on 4 July 2020 in UTC. All times and dates are based on Universal Coordinated Time (UTC).
 We reserve the right, at our sole discretion, to modify or replace these Terms 
 at any time. If a revision is material we will try to provide at least 7 days 
 notice prior to any new terms taking effect. What constitutes a material
