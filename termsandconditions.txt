@@ -3,7 +3,7 @@ Terms and Conditions ("Terms")
 
 
 Please read these Terms and Conditions ("Terms", "Terms and Conditions")
- carefully before using our website at https://random314.000webhostapp.com , which provides Online TWOW Voting functions, or using our mobile application, or using functions or commands that are linked with these applications with messagelogbot or PercBot-Revamped (Commands that begin with msglogbot:onlinevote or the commands !signup, !respond, !vote, or !generatescreen), all these three functions are to be referred to as "Services" or "Our services" from hereafter.
+ carefully before using our website at https://random314.000webhostapp.com , which provides Online TWOW Voting functions, or using our mobile application, or using functions or commands that are linked with these applications with messagelogbot or PercBot-Revamped (Commands that begin with msglogbot:onlinevote or the commands !signup, !respond, !vote, or !generatescreen and all subcommands under !onlinevote), all these three functions are to be referred to as "Services" or "Our services" from hereafter.
 The operator of these services, may hereafter be referred to as "us", "we", or "our".
 
 
