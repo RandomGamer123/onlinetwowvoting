@@ -1,5 +1,7 @@
 # onlinetwowvoting
-A tool for TWOW Voting online, and future mobile applications. This is the source code.
+**This project has been discontinued.** Many of the code here is outdated, and many design decisions here wouldn't be made if I started over nowadays.
+
+A tool for TWOW (a minigame) Voting online, and future mobile applications. This is the source code.
 
 Mobile applications are currently being worked on.
 
